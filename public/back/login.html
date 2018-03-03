@@ -6,15 +6,50 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>login</title>
     <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="lib/bootstrap-validator/css/bootstrapValidator.min.css">
+    <link rel="stylesheet" href="lib/nprogress/nprogress.css">
     <link rel="stylesheet" href="css/common.css">
 </head>
 <body class="body-bgc">
 <div class="container">
-    
+
+    <div class=" col-md-4 col-md-offset-4">
+        <div class="panel panel-primary mt-150">
+            <div class="panel-heading">
+                <h4 class="text-center">后台管理系统</h4>
+            </div>
+            <div class="panel-body">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label for="username" class="col-sm-3 control-label">用户名</label>
+                        <div class="col-sm-9">
+                            <!-- autocomplete="off" 取消自动补全 -->
+                            <input type="text" class="form-control" id="username" placeholder="请输入用户名" name="username" autocomplete="off">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="col-sm-3 control-label">密码</label>
+                        <div class="col-sm-9">
+                            <input type="password" class="form-control" id="password" placeholder="请输入密码" name="password">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-3 col-sm-6 clearfix">
+                            <button type="reset" class="btn btn-default pull-left">重置</button>
+                            <button type="submit" class="btn btn-primary pull-right">登录</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+          </div>
+    </div>
+
 </div>
 
     <script src="lib/jquery/jquery.min.js"></script>
     <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
+    <script src="lib/nprogress/nprogress.js"></script>
     <script src="js/common.js"></script>
     <script src="js/login.js"></script>
 </body>
