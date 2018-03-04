@@ -22,7 +22,7 @@
             </div>
             <ul class="aside-manage">
                 <li>
-                    <a class="user-manage" href="user,html"><span class="glyphicon glyphicon-user"></span> 用户管理</a>
+                    <a class="user-manage current" href="user.html"><span class="glyphicon glyphicon-user"></span> 用户管理</a>
                 </li>
                 <li>
                     <a class="category-manage" href="javascript:;"><span class="glyphicon glyphicon-list"></span> 分类管理</a>
@@ -51,13 +51,38 @@
                     <li class="active">用户管理</li>
                 </ol>
             </div>
-            
+            <div class="main-user">
+                <table width='100%' class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th width='10%'>序号</th>
+                            <th width='30%'>用户名</th>
+                            <th width='30%'>手机号</th>
+                            <th width='20%'>状态</th>
+                            <th width='10%'>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- <tr>
+                            <td width='10%'>1</td>
+                            <td width='30%'>admin</td>
+                            <td width='30%'>13888888888</td>
+                            <td width='20%'>正常</td>
+                            <td width='10%'>
+                                <button class="btn btn-success btn-sm" style="display:none">启用</button>
+                                <button class="btn btn-danger btn-sm">禁用</button>
+                            </td>
+                        </tr> -->
+                    </tbody>
+                </table>
+                <!--分页标签， bootstrapValidator 3版本，只要一个ul.指定需id-->
+                <div class="text-right">
+                    <ul id="paginator"></ul>
+                </div>
+            </div>
         </div>
 
-
-
-
-        <!--退出登录的模态框-->
+        <!-- 退出登录的模态框 -->
         <!--role aria sr-only:-->
         <div class="modal fade" id="logoutModal" tabindex="-1">
             <div class="modal-dialog modal-sm">
@@ -76,6 +101,46 @@
                 </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->
         </div><!-- /.modal -->
+
+        <!-- 点击禁用/启用弹出的模态框 -->
+        <div class="modal fade" id="userModal" tabindex="-1">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+                    <h4 class="modal-title">温馨提示！</h4>
+                </div>
+                <div class="modal-body">
+                    <p class="text-danger"><span class="glyphicon glyphicon-info-sign"></span> 你确定要执行此操作吗？&hellip;</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary btn_confirm">确定</button>
+                </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+        <!-- 渲染表格数据的模板引擎 -->
+        <script type="text/template" id="userTmp">
+            {{ each rows v i }}
+                <tr>
+                    <td width='10%'>{{ (page-1)*size+i+1 }}</td>
+                    <td width='30%'>{{ v.username }}</td>
+                    <td width='30%'>{{ v.mobile }}</td>
+                    <!-- 判断用户账号的状态 -->
+                    <td width='20%'>{{ v.isDelete == 1? '正常': '禁用' }}</td>
+                    <td width='10%' data-id="{{ v.id }}">
+                        {{ if v.isDelete === 0 }}
+                        <button class="btn btn-success btn-sm">启用</button>
+                        {{ /if }}
+                        {{ if v.isDelete === 1}}
+                        <button class="btn btn-danger btn-sm">禁用</button>
+                        {{ /if }}
+                    </td>
+                </tr>
+            {{ /each }}
+        </script>
       
     </div>
     
@@ -83,7 +148,10 @@
 <script src="lib/jquery/jquery.min.js"></script>
 <script src="lib/bootstrap/js/bootstrap.min.js"></script>
 <script src="lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
+<script src="lib/bootstrap-paginator/bootstrap-paginator.js"></script>
 <script src="lib/nprogress/nprogress.js"></script>
+<script src="lib/artTemplate/template-web.js"></script>
 <script src="js/common.js"></script>
+<script src="js/user.js"></script>
 </body>
 </html>

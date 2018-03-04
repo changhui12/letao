@@ -79,7 +79,8 @@ a:active {
     padding-left: 40px;
     border-left: 3px solid transparent;
 }
-.aside-manage .current {
+/* 给当前页的菜单设置左边框的颜色高亮 */
+.aside-manage>li a.current {
     border-color: #069;
 }
 .aside-manage>li .first-menu,
@@ -112,7 +113,7 @@ a:active {
 /* 公共页面路径导航 */
 .main-breadcrumb {
     height: 36px;
-    margin: 20px 20px;
+    margin: 20px;
 }
 /* index页图表 */
 .main-chars {
@@ -121,4 +122,13 @@ a:active {
 .main-chars>div {
     width: 47%;
     height: 400px;
+}
+/* user页表格 */
+.main-user {
+    padding: 0 20px;
+}
+.table.table-bordered th,
+.table.table-bordered td {
+    text-align: center;
+    vertical-align: middle; 
 }
