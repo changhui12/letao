@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>index</title>
+    <title>first</title>
     <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="lib/bootstrap-validator/css/bootstrapValidator.min.css">
     <link rel="stylesheet" href="lib/nprogress/nprogress.css">
@@ -22,11 +22,11 @@
             </div>
             <ul class="aside-manage">
                 <li>
-                    <a class="user-manage" href="user.html"><span class="glyphicon glyphicon-user"></span> 用户管理</a>
+                    <a class="user-manage" href="user,html"><span class="glyphicon glyphicon-user"></span> 用户管理</a>
                 </li>
                 <li>
                     <a class="category-manage" href="javascript:;"><span class="glyphicon glyphicon-list"></span> 分类管理</a>
-                    <ul class="category-second" style="display:none">
+                    <ul class="category-second">
                         <li><a class="first-menu" href="first.html">一级分类</a></li>
                         <li><a class="second-menu" href="second.html">二级分类</a></li>
                     </ul>
@@ -37,7 +37,6 @@
             </ul>
         </div>
         <div class="lt-main">
-            <!-- 头部 -->
             <div class="main-header clearfix">
                 <a class="head-menu pull-left" href="javascript:;">
                     <span class="glyphicon glyphicon-align-justify"></span>
@@ -46,18 +45,14 @@
                     <span class="glyphicon glyphicon-log-out"></span>
                 </a>
             </div>
-            <!-- 路径导航 -->
             <div class="main-breadcrumb">
                 <ol class="breadcrumb">
                     <li><a href="#">管理系统</a></li>
-                    <li class="active">首页</li>
+                    <li><a href="#">分类管理</a></li>
+                    <li class="active">一级分类</li>
                 </ol>
             </div>
-            <!-- 图表 -->
-            <div class="main-chars clearfix">
-                <div class="chars-bar pull-left">1</div>
-                <div class="chars-pie pull-right">2</div>
-            </div>
+            
         </div>
 
 
@@ -90,8 +85,6 @@
 <script src="lib/bootstrap/js/bootstrap.min.js"></script>
 <script src="lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
 <script src="lib/nprogress/nprogress.js"></script>
-<script src="lib/echarts/echarts.min.js"></script>
 <script src="js/common.js"></script>
-<script src="js/index.js"></script>
 </body>
 </html>
