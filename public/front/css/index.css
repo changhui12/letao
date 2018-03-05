@@ -1,19 +1,19 @@
 @charset "UTF-8";
 /* 导航区 */
-.lt-nav {
+.index-nav {
     padding: 10px;
 }
-.lt-nav li {
+.index-nav li {
     float: left;
     width: 33.33%;
 }
 
 /* 商品区 */
-.lt-product {
+.index-product {
     padding:10px;
 
 }
-.lt-product a {
+.index-product a {
     float: left;
     width: 48%;
     border: 1px solid #ccc;
@@ -21,12 +21,12 @@
     padding: 10px;
     text-align: center;
 }
-.lt-product a:nth-child(odd) {
+.index-product a:nth-child(odd) {
     margin-right: 4%;
 }
-.lt-product a .price {
+.index-product a .price {
     color: red;
 }
-.lt-product a .oldPrice {
+.index-product a .oldPrice {
     text-decoration: line-through;
 }

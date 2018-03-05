@@ -24,6 +24,7 @@ img {
     position: relative;
     overflow: hidden;
 }
+/* 公共头部 */
 .lt-header {
     width: 100%;
     height: 45px;
@@ -58,7 +59,7 @@ img {
     font-weight: normal;
     margin: 0;  /* mui对h1-h6及p等标签 有一些样式设置 清除其margin设置 */
 }
-
+/* 公共底部 */
 .lt-footer {
     width: 100%;
     height: 55px;
@@ -82,7 +83,7 @@ img {
 .footer-menu .now a p {
     color: darkorange;
 }
-
+/* 主体部分容器 */
 .lt-main {
     position: relative;
     width: 100%;
