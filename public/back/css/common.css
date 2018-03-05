@@ -80,7 +80,7 @@ a:active {
     border-left: 3px solid transparent;
 }
 /* 给当前页的菜单设置左边框的颜色高亮 */
-.aside-manage>li a.current {
+.aside-manage li a.current {
     border-color: #069;
 }
 .aside-manage>li .first-menu,
