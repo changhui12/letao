@@ -1,1 +1,91 @@
 @charset "UTF-8";
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+html,
+body {
+    height: 100%;
+}
+img {
+    display: block;
+    width: 100%;
+}
+.lt-container {
+    width: 100%;
+    min-width: 320px;
+    max-width: 640px;
+    height: 100%;
+    margin: 0 auto;
+    background-color: #fff;
+    padding-top: 45px;
+    padding-bottom: 55px;
+    position: relative;
+    overflow: hidden;
+}
+.lt-header {
+    width: 100%;
+    height: 45px;
+    background-color: #069;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-left: 45px;
+    padding-right: 45px;
+}
+.lt-header a {
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    top: 0;
+    color: #fff;
+    text-align: center; 
+    line-height: 45px;
+}
+.header-back {
+    left: 0;
+}
+.header-search {
+    right: 0;
+}
+.header-title {
+    height: 45px;
+    width: 100%;
+    color: #fff;
+    line-height: 45px;
+    text-align: center;
+    font-weight: normal;
+    margin: 0;  /* mui对h1-h6及p等标签 有一些样式设置 清除其margin设置 */
+}
+
+.lt-footer {
+    width: 100%;
+    height: 55px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #069;
+    padding-top: 8px;
+}
+.footer-menu li {
+    float: left;
+    width: 25%;
+    height: 100%;
+    text-align: center;
+}
+.footer-menu li a,
+.footer-menu li a p{
+    color: #fff;
+}
+.footer-menu .now a,
+.footer-menu .now a p {
+    color: darkorange;
+}
+
+.lt-main {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}

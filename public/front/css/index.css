@@ -1,0 +1,32 @@
+@charset "UTF-8";
+/* 导航区 */
+.lt-nav {
+    padding: 10px;
+}
+.lt-nav li {
+    float: left;
+    width: 33.33%;
+}
+
+/* 商品区 */
+.lt-product {
+    padding:10px;
+
+}
+.lt-product a {
+    float: left;
+    width: 48%;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    padding: 10px;
+    text-align: center;
+}
+.lt-product a:nth-child(odd) {
+    margin-right: 4%;
+}
+.lt-product a .price {
+    color: red;
+}
+.lt-product a .oldPrice {
+    text-decoration: line-through;
+}
