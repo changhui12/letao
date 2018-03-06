@@ -52,6 +52,30 @@
                     <li class="active">一级分类</li>
                 </ol>
             </div>
+            <!-- first内容 -->
+            <div class="first-main">
+                <!-- 添加分类 -->
+                <button class="btn btn-default main-add" type="submit">添加分类</button>
+                <!-- 表格 -->
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th width="20%">序号</th>
+                            <th width="80%">分类名称</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- <tr>
+                            <td>1</td>
+                            <td>运动馆</td>
+                        </tr> -->
+                    </tbody>
+                </table>
+                <!-- 分页 只要需要一个指定了id的ul标签-->
+                <div class="first-paginator text-right">
+                    <ul id="paginator"></ul>
+                </div>
+            </div>
             
         </div>
 
@@ -77,6 +101,41 @@
                 </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->
         </div><!-- /.modal -->
+
+        <!-- 添加分类的模态框 -->
+        <div class="modal fade" tabindex="-1" id="firstModal">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+                    <h4 class="modal-title">添加分类</h4>
+                </div>
+
+                <form id="form">
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="请输入一级分类的名称" name="categoryName">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                        <button type="submit" class="btn btn-primary">添加</button>
+                    </div>
+                </form>    
+
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+        <!-- 渲染表格的模板引擎-->
+        <script type="text/html" id="firstTpl">
+            {{ each rows v i }}
+                <tr>
+                    <td>{{ (page - 1) * size + i + 1 }}</td>
+                    <td>{{ v.categoryName }}</td>
+                </tr>
+            {{ /each }}
+        </script>
       
     </div>
     
@@ -84,7 +143,10 @@
 <script src="lib/jquery/jquery.min.js"></script>
 <script src="lib/bootstrap/js/bootstrap.min.js"></script>
 <script src="lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
+<script src="lib/bootstrap-paginator/bootstrap-paginator.js"></script>
 <script src="lib/nprogress/nprogress.js"></script>
+<script src="lib/artTemplate/template-web.js"></script>
 <script src="js/common.js"></script>
+<script src="js/first.js"></script>
 </body>
 </html>

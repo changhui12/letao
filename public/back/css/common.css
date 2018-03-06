@@ -82,7 +82,7 @@ a:active {
 /* 给当前页的菜单设置左边框的颜色高亮 */
 .aside-manage li a.current {
     border-color: #069;
-    background-color: #333;
+    background-color: #1d1f21
 }
 .aside-manage>li .first-menu,
 .aside-manage>li .second-menu {
@@ -132,4 +132,11 @@ a:active {
 .table.table-bordered td {
     text-align: center;
     vertical-align: middle; 
+}
+/* first页 */
+.first-main {
+    padding: 0 20px;
+}
+.main-add {
+    margin-bottom: 20px;
 }
