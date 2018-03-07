@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>乐淘商城-搜索页</title>
+    <link rel="stylesheet" href="lib/mui/css/mui.css">
+    <link rel="stylesheet" href="lib/fa/css/font-awesome.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/search.css">
+</head>
+<body>
+    <div class="lt-container">
+        <!-- 公共头部 -->
+        <div class="lt-header">
+            <!--javascript: 伪协议， javascript:void(0);表示页面不跳转，并且执行对应的js    javascript:history.go(-1);  跳转到上一页-->
+            <a href="javascript:history.go(-1);" class="header-back"><span class="mui-icon mui-icon-back"></span></a>
+            <h4 class="header-title">搜索中心</h4>
+        </div>
+
+        <!-- 主体部分 -->
+        <div class="lt-main">
+                       
+            <!-- 区域滚动 mui插件 -->
+            <div class="mui-scroll-wrapper">
+                <div class="mui-scroll">
+                    <!--这里放置真实显示的DOM内容（区域滚动）-->      
+                    <div class="lt-search">
+                        <input type="text" name="key" placeholder="请输入搜索关键字">
+                        <button type="submit" class="mui-btn mui-btn-primary">搜索</button>
+                    </div>             
+                    <div class="lt-history">
+                        <!-- <div class="history-title mui-clearfix">
+                            <span class="mui-pull-left">搜索历史</span>
+                            <span class="mui-pull-right fa fa-trash btn_empty">清空记录</span>
+                        </div>
+                        <div class="history-content">
+                            <ul>
+                                <li>
+                                    <a href="#">1</a>
+                                    <span class="mui-pull-right mui-icon mui-icon-closeempty btn_delete"></span>
+                                </li>
+                            </ul>
+                        </div>                                -->
+                    </div>                      
+                </div>
+            </div>
+                           
+        </div>
+
+        <!-- 公共底部 -->
+        <div class="lt-footer">
+            <ul class="footer-menu mui-clearfix">
+                <li>
+                    <a href="index.html">
+                        <span class="fa fa-home"></span>
+                        <p>首页</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="category.html">
+                        <span class="fa fa-bars"></span>
+                        <p>分类</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="cart.html">
+                        <span class="fa fa-shopping-cart"></span>
+                        <p>购物车</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="user.html">
+                        <span class="fa fa-user"></span>
+                        <p>会员中心</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+    <script type="text/html" id="historyTpl">
+        {{ if info.length === 0 }}
+            <p>没有历史记录</p>
+        {{ else }}
+        <div class="history-title mui-clearfix">
+            <span class="mui-pull-left">搜索历史</span>
+            <span class="mui-pull-right fa fa-trash btn_empty">清空记录</span>
+        </div>
+        <div class="history-content">
+            <ul>
+                {{ each info v i }}
+                <li>
+                    <a href="searchList.html?key={{ v }}">{{ v }}</a>
+                    <span data-index="{{ i }}" class="mui-pull-right mui-icon mui-icon-closeempty btn_delete"></span>
+                </li>
+                {{ /each }}
+            </ul>
+        </div> 
+        {{ /if }}
+    </script>
+
+    <script src="lib/mui/js/mui.js"></script>
+    <script src="lib/zepto/zepto.min.js"></script>
+    <script src="lib/artTemplate/template-web.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/search.js"></script>
+</body>
+</html>

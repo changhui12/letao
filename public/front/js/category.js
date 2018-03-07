@@ -17,7 +17,7 @@ $(function() {
                     url: '/category/querySecondCategory',
                     data: {id: id},
                     success: function(info) {
-                        console.log(info);
+                        // console.log(info);
                         $('.category-content').html(template('secondTpl',info));
                     }
                 })
