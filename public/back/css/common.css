@@ -140,3 +140,10 @@ a:active {
 .main-add {
     margin-bottom: 20px;
 }
+/* second页 */
+.second-main {
+    padding: 0 20px;
+}
+.second-main td img {
+    height: 50px;
+}
