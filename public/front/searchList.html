@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>乐淘商城-搜索页</title>
+    <link rel="stylesheet" href="lib/mui/css/mui.css">
+    <link rel="stylesheet" href="lib/fa/css/font-awesome.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/searchList.css">
+</head>
+<body>
+    <div class="lt-container">
+        <!-- 公共头部 -->
+        <div class="lt-header">
+            <!--javascript: 伪协议， javascript:void(0);表示页面不跳转，并且执行对应的js    javascript:history.go(-1);  跳转到上一页-->
+            <a href="javascript:history.go(-1);" class="header-back"><span class="mui-icon mui-icon-back"></span></a>
+            <h4 class="header-title">商品列表</h4>
+        </div>
+
+        <!-- 主体部分 -->
+        <div class="lt-main">
+                       
+            <!-- 区域滚动 mui插件 -->
+            <div class="mui-scroll-wrapper">
+                <div class="mui-scroll">
+                    <!--这里放置真实显示的DOM内容（区域滚动）-->      
+                    <div class="lt-search">
+                        <input type="text" name="key" placeholder="请输入搜索关键字">
+                        <button type="submit" class="mui-btn mui-btn-primary">搜索</button>
+                    </div> 
+                    <!-- 产品部分 -->
+                    <div class="lt-product">
+                        <!-- 头部 -->
+                        <ul class="lt_sort mui-clearfix">
+                            <li class="mui-pull-left"><a href="javascript:;">上架时间 <span class="fa fa-angle-down"></span></a></li>
+                            <li class="mui-pull-left"><a href="javascript:;" data-type="price">价格 <span class="fa fa-angle-down"></span></a></li>
+                            <li class="mui-pull-left"><a href="javascript:;" data-type="num">库存 <span class="fa fa-angle-down"></span></a></li>
+                            <li class="mui-pull-left"><a href="javascript:;">折扣 <span class="fa fa-angle-down"></span></a></li>
+                        </ul>
+                        <!-- 商品区 -->
+                        <div class="index-product mui-clearfix">
+                            <!-- <a href="#">
+                                <img src="images/product.jpg" alt=""> -->
+                                <!-- mui-ellipsis-2 mui设置的类，最多显示两行文字 -->
+                                <!-- <p class="mui-ellipsis-2">adidas阿迪达斯 男式 场下休闲篮球鞋S83700场下休闲篮球鞋S83700 </p>
+                                <p>
+                                    <span class="price">&yen; 560</span>
+                                    <span class="oldPrice">&yen; 580</span>
+                                </p>
+                                <button class="mui-btn mui-btn-primary">立即购买</button>
+                            </a>                                                       -->
+                        </div>
+                    </div>
+                           
+                </div>
+            </div>
+                           
+        </div>
+
+        <!-- 公共底部 -->
+        <div class="lt-footer">
+            <ul class="footer-menu mui-clearfix">
+                <li>
+                    <a href="index.html">
+                        <span class="fa fa-home"></span>
+                        <p>首页</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="category.html">
+                        <span class="fa fa-bars"></span>
+                        <p>分类</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="cart.html">
+                        <span class="fa fa-shopping-cart"></span>
+                        <p>购物车</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="user.html">
+                        <span class="fa fa-user"></span>
+                        <p>会员中心</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- 渲染商品的模态框 -->
+    <script type="text/html" id="tpl">
+        {{ if data.length === 0 }}
+        <p>没有更多的商品信息</p>
+        {{ /if }}
+        {{ each data v i }}
+        <a href="product.html?productId={{ v.id }}">
+            <img src="{{ v.pic[0].picAddr ? v.pic[0].picAddr : 'images/product.jpg' }}" alt="">
+            <!-- mui-ellipsis-2 mui设置的类，最多显示两行文字 -->
+            <p class="mui-ellipsis-2">{{ v.proName }}</p>
+            <p>
+                <span class="price">&yen; {{ v.price }}</span>
+                <span class="oldPrice">&yen; {{ v.oldPrice }}</span>
+            </p>
+            <button class="mui-btn mui-btn-primary">立即购买</button>
+        </a>   
+        {{ /each }}    
+    </script>
+
+    <script src="lib/mui/js/mui.js"></script>
+    <script src="lib/zepto/zepto.min.js"></script>
+    <script src="lib/artTemplate/template-web.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/searchList.js"></script>
+</body>
+</html>
